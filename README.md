@@ -1,14 +1,12 @@
 # vnpy-Enterprise
 
 VNPY官网： http://www.vnpy.cn
-
-我们为金融机构和量化爱好者提供了VNPY企业版，包含了量化产品线，特指定2020年的产品规划，包含了历史行情数据、实时行情数据、仿真回测、商业化软件（资管系统、跟单软件）。
-
-
+VNPY扎根于国内合规期货市场和A股市场，为金融机构和量化爱好者提供全系列的量化产品线， 包含了历史行情数据、实时行情数据、仿真回测、商业化软件（资管系统、跟单软件）。
 
 项目捐赠
 
-需强调：vn.py是免费开源项目，不接受任何捐赠！任何索取捐赠的均为利益误导。
+需强调：VNPY是免费开源项目，不接受任何捐赠！任何打着VNPY旗号索取捐赠的均为利益误导和诈骗。
+
 
 
 
@@ -186,72 +184,8 @@ PreClosePrice (昨收盘),
 PreOpenInterest (昨持仓),
 PreSettlementPrice (上次结算价)
 
-环境准备
-
-    推荐使用VNPY团队为量化交易专门打造的Python发行版VNStudio-2.1.4，内置了最新版的VNPY框架以及VN Station量化管理平台，无需手动安装
-    支持的系统版本：Windows 7以上/Windows Server 2008以上/Ubuntu 18.04 LTS
-    支持的Python版本：Python 3.7 64位（注意必须是Python 3.7 64位版本）
-
-安装步骤
-
-在这里下载最新版本，解压后运行以下命令安装：
-
-Windows
-
-install.bat
-
-Ubuntu
-
-bash install.sh
-
-使用指南
-
-    在SimNow注册CTP仿真账号，并在该页面获取经纪商代码以及交易行情服务器地址。
-
-    在vn.py社区论坛注册获得VN Station账号密码（论坛账号密码即是）
-
-    启动VN Station（安装VN Studio后会在桌面自动创建快捷方式），输入上一步的账号密码登录
-
-    点击底部的VN Trader Lite按钮，开始你的交易！！！
-
-注意：
-
-    在VN Trader的运行过程中请勿关闭VN Station（会自动退出）
-    如需要灵活配置量化交易应用组件，请使用VN Trader Pro
-
-脚本运行
-
-除了基于VN Station的图形化启动方式外，也可以在任意目录下创建run.py，写入以下示例代码：
-
-from vnpy.event import EventEngine
-from vnpy.trader.engine import MainEngine
-from vnpy.trader.ui import MainWindow, create_qapp
-from vnpy.gateway.ctp import CtpGateway
-from vnpy.app.cta_strategy import CtaStrategyApp
-from vnpy.app.cta_backtester import CtaBacktesterApp
-
-def main():
-    """Start VN Trader"""
-    qapp = create_qapp()
-
-    event_engine = EventEngine()
-    main_engine = MainEngine(event_engine)
-    
-    main_engine.add_gateway(CtpGateway)
-    main_engine.add_app(CtaStrategyApp)
-    main_engine.add_app(CtaBacktesterApp)
-
-    main_window = MainWindow(main_engine, event_engine)
-    main_window.showMaximized()
-
-    qapp.exec()
-
-if __name__ == "__main__":
-    main()
-
-在该目录下打开CMD（按住Shift->点击鼠标右键->在此处打开命令窗口/PowerShell）后运行下列命令启动VN Trader：
-
-python run.py
+ 
+ 
 
 贡献代码
 
@@ -282,13 +216,8 @@ VNPY使用Github托管其源代码，如果希望贡献代码请使用github的P
  
 
 长期维护捐赠清单，请在留言中注明是项目捐赠以及捐赠人的名字。
-其他内容
+ 
 
-    获取帮助
-    社区行为准侧
-    Issue模板
-    PR模板
-
-版权说明
+版权说明  
 
 MIT
